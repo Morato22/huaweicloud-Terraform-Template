@@ -560,3 +560,154 @@ variable smn_subscription {
     }))
     description = "SMN Subscription variables."
 }
+
+##### WAF VARIABLES #####
+variable create_waf_instance {
+    type = bool
+    description = "Inser true to create a WAF Instance. Insert false to not create."
+    default = true
+}
+
+### WAF POLICY ###
+variable waf_policy_name {
+    type = string
+    description = "Insert the WAF Policy name."
+}
+
+variable waf_policy_protection {
+    type = string
+    description = "Insert the WAF Policy protection mode."
+}
+
+variable waf_policy_robot {
+    type = string
+    description = "Insert the WAF Policy robot action."
+}
+
+variable waf_policy_level {
+    type = number
+    description = "Insert the WAF Policy level."
+}
+
+### WAF POLICY OPTIONS ###
+variable waf_crawler_scanner {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_crawler_script {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_false_alarm {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_general {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_geolocation {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_information_leakage {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_known_attacks {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_precise {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_web_tamper {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+variable waf_webshell {
+    type = bool
+    description = "Insert true to activate this option."
+    default = true
+}
+
+### WAF RULE PRECISE ###
+variable waf_rule_precise {
+    type = list(object({
+        waf_rule_precise_name = string
+        waf_rule_precise_priority = string
+        waf_rule_precise_action = string
+        waf_rule_precise_description = string
+        waf_rule_precise_status = number
+    }))
+}
+
+### WAF GEOBLOCK ###
+variable waf_geoblock {
+    type = list(object({
+        waf_geolocation_name = string
+        waf_geolocation = string
+        waf_geolocation_action = number
+        waf_geolocation_description = string
+    }))
+}
+
+### WAF DOMAINS ###
+variable waf_domain {
+    type = string
+    description = "Insert your domain."
+}
+
+variable waf_proxy {
+    type = bool
+    description = "Insert true to enable proxy. Insert false to disable."
+}
+
+variable waf_domain_protect {
+    type = number
+    description = "Insert the WAF Domain protect status."
+}
+
+variable waf_client_protocol {
+    type = string
+    description = "Insert the client protocol."
+}
+
+variable waf_server_protocol {
+    type = string
+    description = "Insert the server protocol."
+}
+
+variable waf_server_address {
+    type = string
+    description = "Insert the server address."
+}
+
+variable waf_server_port {
+    type = string
+    description = "Insert the server port."
+}
+
+variable waf_server_type {
+    type = string
+    description = "Insert the server type."
+}

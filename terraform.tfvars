@@ -305,3 +305,36 @@ smn_subscription = [{
   smn_subscription_protocol = "email"
   smn_subscription_remark = "O&M"
 }]
+
+### WAF VARIABLES ###
+waf_policy_name = "waf-policy-tf"
+waf_policy_protection = "log"
+waf_policy_robot = "block"
+waf_policy_level = 1
+
+## WAF RULE PRECISE ##
+waf_rule_precise = [{
+  waf_rule_precise_name = "rule_blocking-all-but-brazil"
+  waf_rule_precise_priority = "10"
+  waf_rule_precise_action = "block"
+  waf_rule_precise_description = "block all countries"
+  waf_rule_precise_status = 1
+}]
+
+## WAF GEO BLOCK ##
+waf_geoblock = [{
+  waf_geolocation = "BR"
+  waf_geolocation_name = "allow-brazil"
+  waf_geolocation_action = 1
+  waf_geolocation_description = "allow brazil acces to your website"
+}]
+
+## WAF DOMAIN ##
+waf_domain = "example.com"
+waf_proxy = false
+waf_domain_protect = 1
+waf_client_protocol = "HTTP"
+waf_server_protocol = "HTTP"
+waf_server_address = "257.123.123.123"
+waf_server_port = "80"
+waf_server_type = "ipv4"
