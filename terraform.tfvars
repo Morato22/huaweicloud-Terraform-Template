@@ -19,7 +19,7 @@ secgroup_rule = [{
   secgroup_rule_direction = "ingress"
   secgroup_rule_ethertype = "IPV4"
   secgroup_rule_protocol  = "tcp"
-  secgroup_rule_ports     = "22,80"
+  secgroup_rule_ports     = "22,80,8635,6379"
   secgroup_rule_ip-prefix = "0.0.0.0/0"
   },
   {
@@ -338,3 +338,36 @@ waf_server_protocol = "HTTP"
 waf_server_address = "257.123.123.123"
 waf_server_port = "80"
 waf_server_type = "ipv4"
+
+
+### GeminiDB Cassandra VARIABLES ###
+gcassandra_name = "cassandra-tf"
+gcassandra_password = "Huawe@123"
+gcassandra_flavor = "geminidb.cassandra.large.4"
+gcassandra_volume = 200
+gcassandra_nodes = 3
+gcassandra_engine = "cassandra"
+gcassandra_version = "3.11"
+gcassandra_storage_engine = "rocksDB"
+
+### GeminiDB Redis VARIABLES ###
+gredis_name = "redis-tf"
+gredis_password = "Huawe@123"
+gredis_flavor = "geminidb.redis.medium.4"
+gredis_volume = 6
+gredis_nodes = 3
+gredis_port = 6379
+gredis_engine = "redis"
+gredis_version = "5.0"
+gredis_storage_engine = "rocksDB"
+
+### GeminiDB InfluxDB VARIABLES ###
+ginflux_name = "influx-tf"
+ginflux_password = "Huawe@123"
+ginflux_flavor = "geminidb.influxdb.large.4"
+ginflux_volume = 200
+ginflux_node = 4
+
+### VPC ENDPOINT VARIABLES ###
+service_private_id = "4be4d50a-ff2d-48c5-8b54-1f2a6ec302c1"
+endpoint_whitelist = [ "192.168.0.0/24", "192.168.0.1/24"]

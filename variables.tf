@@ -1,7 +1,7 @@
 ### CREDENTIALS VARIABLES ###
 variable "credentialshwc" {
   type    = list(string)
-  default = ["sa-brazil-1", "..", "..", "..", "la-south-2"]
+  default = ["sa-brazil-1", "..", "..", "la-south-2"]
   description = "Region and your AK, SK, and region 2."
 }
 
@@ -565,7 +565,7 @@ variable smn_subscription {
 variable create_waf_instance {
     type = bool
     description = "Inser true to create a WAF Instance. Insert false to not create."
-    default = true
+    default = false
 }
 
 ### WAF POLICY ###
@@ -593,61 +593,61 @@ variable waf_policy_level {
 variable waf_crawler_scanner {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_crawler_script {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_false_alarm {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_general {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_geolocation {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_information_leakage {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_known_attacks {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_precise {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_web_tamper {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 variable waf_webshell {
     type = bool
     description = "Insert true to activate this option."
-    default = true
+    default = false
 }
 
 ### WAF RULE PRECISE ###
@@ -710,4 +710,166 @@ variable waf_server_port {
 variable waf_server_type {
     type = string
     description = "Insert the server type."
+}
+
+
+##### Gemini DB Cassandra VARIABLES #####
+variable create_gcassandra {
+    type = bool
+    description = "Insert true to create a Cassandra Instance. Insert false to not create."
+    default = false
+}
+
+variable gcassandra_name {
+    type = string
+    description = "Cassandra Instance Name"
+}
+
+variable gcassandra_password {
+    type = string
+    description = "Cassandra Instance Password"
+}
+
+variable gcassandra_flavor {
+    type = string
+    description = "Casssandra Instance Flavor"
+}
+
+variable gcassandra_volume {
+    type = number
+    description = "Cassandra Instance Volume Size"
+}
+
+variable gcassandra_nodes {
+    type = number
+    description = "Cassandra Instance Nodes Number"
+}
+
+variable gcassandra_engine {
+    type = string
+    description = "Cassandra Engine (Only cassandra)"
+}
+
+variable gcassandra_version {
+    type = string
+    description = "Cassandra Version"
+}
+
+variable gcassandra_storage_engine {
+    type = string
+    description = "Cassandra Storage Engine"
+}
+
+
+##### Gemini DB Redis VARIABLES #####
+variable create_gredis {
+    type = bool
+    description = "Insert true to create a Redis Instance. Insert false to not create"
+    default = false
+}
+
+variable gredis_name {
+    type = string
+    description = "Redis Instance Name"
+}
+
+variable gredis_password {
+    type = string
+    description = "Redis Instance Password"
+}
+
+variable gredis_flavor {
+    type = string
+    description = "Redis Instance Flavor"
+}
+
+variable gredis_volume {
+    type = number
+    description = "Redis Instance Volume Size"
+}
+
+variable gredis_nodes {
+    type = number
+    description = "Redis Instance Nodes"
+}
+
+variable gredis_port {
+    type = number
+    description = "Redis Instance Port"
+}
+
+variable gredis_engine {
+    type = string
+    description = "Redis Engine (Only redis)"
+}
+
+variable gredis_version {
+    type = string
+    description = "Redis Version"
+}
+
+variable gredis_storage_engine {
+    type = string
+    description = "Redis Storage Engine (Only rocksDB)"
+}
+
+##### GeminiDB InfluxDB VARIABLES #####
+variable create_ginflux {
+    type = bool
+    description = "Insert true to create a InfluxDB instance. Insert false to not create"
+    default = false
+}
+
+variable ginflux_name {
+    type = string
+    description = "InfluxDB Instance Name"
+}
+
+variable ginflux_password {
+    type = string
+    description = "InfluxDB Instance password"
+}
+
+variable ginflux_flavor {
+    type = string
+    description = "InfluxDB Instance flavor"
+}
+
+variable ginflux_volume {
+    type = number
+    description = "InfluxDB Volume Size"
+}
+
+variable ginflux_node {
+    type = number
+    description = "InfluxDB Nodes"
+}
+
+##### VPC Endpoint VARIABLES #####
+variable "create_vpcep" {
+  type = bool
+  default = false
+  description = "Insert true to create the VPC Endpoint. Insert false to not create"
+}
+
+variable "service_private_id" {
+  type = string
+  description = "Private Service ID"
+}
+
+variable endpoint_dns {
+    type = bool
+    default = false
+    description = "Insert True to create an endpoint with DNS. Insert false to not create"
+}
+
+variable endpoint_whitelist_enable {
+    type = bool
+    default = true
+    description = "Insert true to create a whitelist to the Endpoint. Insert false to not create"
+}
+
+variable "endpoint_whitelist" {
+    type = list(string)
+    description = "Insert the CIDR of the IPs in the whitelist"
 }
