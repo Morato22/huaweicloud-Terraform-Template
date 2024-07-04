@@ -100,7 +100,7 @@ cluster-tf_version    = "v1.27"
 cce_node_pool = [ {
     cce_np_name = "np-tf"
     cce_np_os = "Huawei Cloud EulerOS 2.0"
-    cce_np_password = "huawei123@"
+    cce_np_password = ".."
     cce_np_flavor = "c7n.xlarge.2"
     cce_np_count = "2"
     cce_np_scall = false
@@ -149,7 +149,7 @@ rds_tf = [{
   rds_type_version = "15"
   rds_volume_type  = "CLOUDSSD"
   rds_volume_size  = "40"
-  rds_password     = "Hu@wei!@#"
+  rds_password     = ".."
   }
 ]
 
@@ -342,7 +342,7 @@ waf_server_type = "ipv4"
 
 ### GeminiDB Cassandra VARIABLES ###
 gcassandra_name = "cassandra-tf"
-gcassandra_password = "Huawe@123"
+gcassandra_password = ".."
 gcassandra_flavor = "geminidb.cassandra.large.4"
 gcassandra_volume = 200
 gcassandra_nodes = 3
@@ -352,7 +352,7 @@ gcassandra_storage_engine = "rocksDB"
 
 ### GeminiDB Redis VARIABLES ###
 gredis_name = "redis-tf"
-gredis_password = "Huawe@123"
+gredis_password = ".."
 gredis_flavor = "geminidb.redis.medium.4"
 gredis_volume = 6
 gredis_nodes = 3
@@ -363,7 +363,7 @@ gredis_storage_engine = "rocksDB"
 
 ### GeminiDB InfluxDB VARIABLES ###
 ginflux_name = "influx-tf"
-ginflux_password = "Huawe@123"
+ginflux_password = ".."
 ginflux_flavor = "geminidb.influxdb.large.4"
 ginflux_volume = 200
 ginflux_node = 4
@@ -371,3 +371,60 @@ ginflux_node = 4
 ### VPC ENDPOINT VARIABLES ###
 service_private_id = "4be4d50a-ff2d-48c5-8b54-1f2a6ec302c1"
 endpoint_whitelist = [ "192.168.0.0/24", "192.168.0.1/24"]
+
+### DCS Redis VARIABLES ###
+dcs_redis_name = "redis-tf"
+dcs_redis_engine = "Redis"
+dcs_redis_engine_version = "5.0"
+dcs_redis_flavor = "redis.cluster.xu1.large.r2.4"
+dcs_redis_password = ".."
+dcs_redis_port = 6379
+dcs_redis_capacity = 4
+
+dcs_redis_backup_type = "auto"
+dcs_redis_backup_save_days = 3
+dcs_redis_backup_at = [1,3,5,7]
+dcs_redis_backup_begin_at = "02:00-04:00"
+
+dcs_redis_whitelist_group_name1 = "test-group1"
+dcs_redis_whitelist_ip_address1 = ["192.168.10.100", "192.168.0.0/24"]
+
+dcs_redis_whitelist_group_name2 = "test-group2"
+dcs_redis_whitelist_ip_address2 = ["172.16.10.100", "172.16.0.0/24"]
+
+### DDS VARIABLES ###
+dds_datastore_type = "DDS-Community"
+dds_datastore_version = "4.4"
+dds_datastore_storage_engine = "rocksDB"
+
+dds_instance_name = "dds-tf"
+dds_instance_password = ".."
+dds_instance_mode = "Sharding"
+
+dds_flavor_type1 = "mongos"
+dds_flavor_num1 = 2
+dds_flavor_spec_code1 = "dds.mongodb.s6.large.4.mongos"
+
+dds_flavor_type2 = "shard"
+dds_flavor_num2 = 2
+dds_flavor_storage2 = "ULTRAHIGH"
+dds_flavor_size2 = 100
+dds_flavor_spec_code2 = "dds.mongodb.s6.xlarge.4.shard"
+
+dds_flavor_type3 = "config"
+dds_flavor_num3 = 1
+dds_flavor_storage3 = "ULTRAHIGH"
+dds_flavor_size3 = 20
+dds_flavor_spec_code3 = "dds.mongodb.s6.large.2.config"
+
+### DMS RabbitMQ VARIABLES ###
+rabbit_type = "cluster"
+rabbit_storage_type = "dms.physical.storage.ultra.v2"
+
+rabbit_instance_name = "rabbit-tf"
+rabbit_instance_flavor = "rabbitmq.2u4g.cluster"
+rabbit_instance_engine = "3.8.35"
+rabbit_instance_broker_num = 3
+rabbit_instance_broker_storage = 300
+rabbit_instance_user = "user"
+rabbit_instance_password = ".."

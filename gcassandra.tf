@@ -17,11 +17,3 @@ resource "huaweicloud_gaussdb_cassandra_instance" "gcassandra" {
     storage_engine = var.gcassandra_storage_engine
   }
 }
-
-data huaweicloud_gaussdb_cassandra_instances out {
-  region = var.credentialshwc[0]
-}
-
-output "cas" {
-  value = data.huaweicloud_gaussdb_cassandra_instances.out
-}

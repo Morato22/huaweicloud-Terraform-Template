@@ -873,3 +873,243 @@ variable "endpoint_whitelist" {
     type = list(string)
     description = "Insert the CIDR of the IPs in the whitelist"
 }
+
+##### DCS Redis VARIABLES #####
+variable create_dcs_redis {
+    type = bool
+    description = "Insert true to create a DCS Redis Instance. Insert false to not create."
+    default = true
+}
+variable "dcs_redis_name" {
+    type = string
+    description = "DCS Redis name"
+}
+
+variable "dcs_redis_engine" {
+    type = string
+    description = "DCS Redis Engine (Only Redis)"
+}
+
+variable "dcs_redis_engine_version" {
+    type = string
+    description = "DCS Redis Engine Version"
+}
+
+variable "dcs_redis_flavor" {
+    type = string
+    description = "DCS Redis Flavor"
+}
+
+variable "dcs_redis_password" {
+    type = string
+    description = "DCS Redis Password"
+}
+
+variable "dcs_redis_port" {
+    type = number
+    description = "DCS Redis Port"
+}
+
+variable dcs_redis_capacity {
+    type = number
+    description = "DCS Redis Capacity (GB)"
+}
+
+variable "dcs_redis_whitelist_enable" {
+    type = bool
+    description = "Insert true to enable a withelist to a DCS Redis Instance. Insert false to disable."
+    default = true
+}
+
+variable "dcs_redis_backup_type" {
+    type = string
+    description = "DCS Redis backup mode"
+}
+
+variable "dcs_redis_backup_save_days" {
+    type = number
+    description = "DCS Redis backup number of days to do the backup"
+}
+
+variable "dcs_redis_backup_at" {
+    type = list(number)
+    description = "DCS Redis backup days in the week"
+}
+
+variable "dcs_redis_backup_begin_at" {
+    type = string
+    description = "DCS Redis backup start and end time"
+}
+
+variable "dcs_redis_whitelist_group_name1" {
+    type = string
+    description = "DCS Redis Whitelist Group Name 1"
+}
+
+variable "dcs_redis_whitelist_ip_address1" {
+    type = list(string)
+    description = "DCS Redis Whitelist 1"
+}
+
+variable "dcs_redis_whitelist_group_name2" {
+    type = string
+    description = "DCS Redis Whitelist Group Name 2"
+}
+
+variable "dcs_redis_whitelist_ip_address2" {
+    type = list(string)
+    description = "DCS Redis Whitelist 2"
+  
+}
+
+##### DDS VARIABLES #####
+variable create_dds {
+    type = bool
+    description = "Insert true to create a DDS Instance. Insert false to not create"
+    default = false
+}
+variable "dds_instance_name" {
+    type = string
+    description = "DDS Instance name"
+}
+
+variable "dds_datastore_type" {
+    type = string
+    description = "DDS Instance type"
+}
+
+variable "dds_datastore_version" {
+    type = string
+    description = "DDS Instance version"
+}
+
+variable "dds_datastore_storage_engine" {
+    type = string
+    description = "DDS Instance Storage engine"
+}
+
+variable "dds_instance_password" {
+    type = string
+    description = "DDS Instance password"
+}
+
+variable "dds_instance_mode" {
+    type = string
+    description = "DDS Instance mode"
+}
+
+variable "dds_flavor_type1" {
+    type = string
+    description = "DDS Instance flavor type 1"
+}
+
+variable "dds_flavor_num1" {
+    type = number
+    description = "DDS Instance Mongo nodes number"
+}
+
+variable "dds_flavor_spec_code1" {
+    type = string
+    description = "DDS Instance Mongo flavor"
+}
+
+variable "dds_flavor_type2" {
+    type = string
+    description = "DDS Instance flavor type 2"
+}
+
+variable "dds_flavor_num2" {
+    type = number
+    description = "DDS Instance Shard group number"
+}
+
+variable "dds_flavor_storage2" {
+    type = string
+    description = "DDS Instance Shard Storage type"
+}
+
+variable "dds_flavor_size2" {
+    type = number
+    description = "DDS Instance Shard Storage size"
+}
+
+variable "dds_flavor_spec_code2" {
+    type = string
+    description = "DDS Instance Shard flavor"
+}
+
+variable "dds_flavor_type3" {
+    type = string
+    description = "DDS Instance flavor type 3"
+}
+
+variable "dds_flavor_num3" {
+    type = number
+    description = "DDS Instance config group number"
+}
+
+variable "dds_flavor_storage3" {
+    type = string
+    description = "DDS Instance Config Storage type"
+}
+
+variable "dds_flavor_size3" {
+    type = number
+    description = "DDS Instance Config Storage size"
+}
+
+variable "dds_flavor_spec_code3" {
+    type = string
+    description = "DDS Instance Config flavor"
+}
+
+##### DMS RabbitMQ VARIABLES #####
+variable create_dms_rabbit {
+    type = bool
+    description = "Insert true to create a DMS RabbitMQ Instance. Insert false to not create."
+    default = false
+}
+variable rabbit_type {
+    type = string
+    description = "DMS RabbitMQ type can be Single-Node or Cluster."
+}
+
+variable rabbit_storage_type {
+    type = string
+    description = "DMS RabbitMQ Storage type per broker. Can be High I/O (dms.physical.storage.high.v2) or Ultra-high I/O (dms.physical.storage.ultra.v2)."
+}
+
+variable rabbit_instance_name {
+    type = string
+    description = "DMS RabbitMQ Name"
+}
+
+variable rabbit_instance_flavor {
+    type = string
+    description = "DMS RabbitMQ flavor"
+}
+
+variable rabbit_instance_engine {
+    type = string
+    description = "DMS RabbitMQ Engine Version"
+}
+
+variable rabbit_instance_broker_num {
+    type = number
+    description = "DMS RabbitMQ Broker Number"
+}
+
+variable rabbit_instance_broker_storage {
+    type = number
+    description = "DMS RabbitMQ Broker storage space"
+}
+
+variable rabbit_instance_user {
+    type = string
+    description = "DMS RabbitMQ user"
+}
+
+variable rabbit_instance_password {
+    type = string
+    description = "DMS RabbitMQ password"
+}
